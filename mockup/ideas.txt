@@ -1,0 +1,29 @@
+Lamguage Tutoring Website
+
+Examples:
+	- https://preply.com/ 
+	- www.languagetutors.ca
+	- https://www.verbling.com/
+	- https://www.italki.com/
+
+Languages:
+	English
+	Mandarin Chinese
+	Spanish
+	Arabic
+	French
+	Russian
+	Portuguese
+	German
+	Japanese
+
+Tutor info:
+	About
+	Photo
+	Certification
+	Education
+	Description
+	Video
+	Availability
+	Pricing
+	Discount

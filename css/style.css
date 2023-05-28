@@ -1,0 +1,61 @@
+body {
+    background-color: #CCCCCC;
+    font-family: 'Open Sans', Arial, sans-serif;
+    color: #002E5D;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: bold;
+}
+
+.container {
+    height: 100vh;
+    border: #002E5D;
+}
+
+.navbar {
+    background-color: #002E5D;
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+    font-weight: bold;
+}
+
+.logo-box {
+    background-color: #5685A9;
+    border-radius: 8px;
+    padding: 3px;
+    color: #002E5D
+}
+
+.login-box {
+    background-color: #98FF98;
+    border-radius: 8px;
+    padding: 3px;
+    color: #002E5D
+}
+
+.logo-box .nav-link,
+.login-box .nav-link {
+    color: #002E5D;
+}
+
+.white-pill {
+    background-color: white;
+    border-radius: 60px;
+    padding: 20px;
+    width: 100px;
+    color: black;
+    font-weight: bold;
+    font-size: small;
+
+}
