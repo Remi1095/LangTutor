@@ -1,4 +1,12 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
 body {
+    display: flex;
+    flex-direction: column;
     background-color: #CCCCCC;
     font-family: 'Open Sans', Arial, sans-serif;
     color: #002E5D;
@@ -11,8 +19,9 @@ h3 {
 }
 
 .container {
-    height: 100vh;
-    border: #002E5D;
+    height: 100%;
+    border: 2px solid #000000;
+    
 }
 
 .navbar {
@@ -51,9 +60,9 @@ h3 {
 
 .white-pill {
     background-color: white;
-    border-radius: 60px;
-    padding: 20px;
-    width: 100px;
+    border-radius: 30%;
+    padding: 2%;
+    width: 15%;
     color: black;
     font-weight: bold;
     font-size: small;
