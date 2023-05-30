@@ -1,8 +1,9 @@
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
     padding: 0;
-  }
+}
 
 body {
     display: flex;
@@ -19,9 +20,8 @@ h3 {
 }
 
 .container {
-    height: 100%;
-    border: 2px solid #000000;
-    
+    /*border: 2px solid #000000;*/
+
 }
 
 .navbar {
@@ -37,20 +37,21 @@ h3 {
 .navbar-nav .nav-link {
     color: white;
     font-weight: bold;
+    margin-inline: 10px;
 }
 
 .logo-box {
     background-color: #5685A9;
     border-radius: 8px;
     padding: 3px;
-    color: #002E5D
+    font-size: larger;
+    padding-inline: 0;
 }
 
 .login-box {
     background-color: #98FF98;
     border-radius: 8px;
     padding: 3px;
-    color: #002E5D
 }
 
 .logo-box .nav-link,
@@ -59,12 +60,28 @@ h3 {
 }
 
 .white-pill {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     background-color: white;
-    border-radius: 30%;
-    padding: 2%;
-    width: 15%;
+    border-radius: 80px;
+    margin: 12px;
+    width: 120px;
+    height: 160px;
     color: black;
     font-weight: bold;
-    font-size: small;
+}
 
+.white-pill img {
+    width: 88px;
+    display: block;
+    margin: 0 auto;
+}
+
+footer {
+    font-size: small;
+    background-color: #A0A0A0;
+    color: black;
 }

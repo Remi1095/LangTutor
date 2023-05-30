@@ -1,0 +1,42 @@
+{
+    "tutors": [
+      {
+        "name": "John Smith",
+        "picture": "images/sample_profile.jpg",
+        "location": "New York, USA",
+        "languages": ["English", "Spanish"],
+        "nativeLanguage": "English",
+        "ageGroups": ["Children", "Teenagers", "Adults"],
+        "levels": ["Beginner", "Intermediate", "Advanced"],
+        "lessonLocation": ["Online", "Local"],
+        "timezone": "EST",
+        "rating": 4.7,
+        "hourlyRate": 30,
+        "description": "Experienced language tutor offering personalized lessons to help students improve their language skills.",
+        "availability": {
+          "Monday": ["09:00 - 12:00", "15:00 - 18:00"],
+          "Wednesday": ["10:00 - 01:00", "16:00 - 19:00"],
+          "Friday": ["08:00 - 11:00"]
+        }
+      },
+      {
+        "name": "Sarah Johnson",
+        "picture": "images/sample_picture.jpg",
+        "location": "London, UK",
+        "languages": ["English", "French"],
+        "nativeLanguage": "English",
+        "ageGroups": ["Teenagers", "Adults"],
+        "levels": ["Intermediate", "Advanced"],
+        "lessonLocation": ["Online"],
+        "timezone": "GMT",
+        "rating": 4.5,
+        "hourlyRate": 35,
+        "description": "Experienced French tutor specializing in conversation and grammar skills.",
+        "availability": {
+          "Tuesday": ["13:00 - 16:00", "18:00 - 21:00"],
+          "Thursday": ["09:00 - 12:00", "14:00 - 17:00"]
+        }
+      }
+    ]
+  }
+  
