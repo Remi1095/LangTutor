@@ -10,13 +10,25 @@ body {
     flex-direction: column;
     background-color: #CCCCCC;
     font-family: 'Open Sans', Arial, sans-serif;
-    color: #002E5D;
+    color: #000000;
 }
 
 h1,
 h2,
 h3 {
     font-weight: bold;
+}
+
+.navy-text {
+    color: #002E5D !important;
+}
+
+.profile-picture {
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 .container {
@@ -54,11 +66,6 @@ h3 {
     padding: 3px;
 }
 
-.logo-box .nav-link,
-.login-box .nav-link {
-    color: #002E5D;
-}
-
 .white-pill {
     display: inline-flex;
     flex-direction: column;
@@ -84,4 +91,14 @@ footer {
     font-size: small;
     background-color: #A0A0A0;
     color: black;
+}
+
+.table {
+    border: 1px solid black;
+    background-color: #F0F0F0;
+}
+
+.table th,
+.table td {
+    border: 1px solid black;
 }
