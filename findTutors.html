@@ -9,13 +9,123 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-</head>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/findTutors.js"></script>
+
 
 <body>
 
+  <nav class="navbar navbar-expand-sm">
+    <div class="container-fluid">
+      <ul class="navbar-nav">
+        <li class="nav-item logo-box">
+          <a class="nav-link navy-text" href="index.html">LangTutor</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="findTutors.html">Find Tutors</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Become a Tutor</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item login-box ms-auto">
+          <a class="nav-link navy-text" href="#">Login</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <div class="row mt-5">
+      <div class="col-md-1"></div>
 
 
-    
+      <div class="col-md-2">
+        <div class="rounded-box text-center">
+          <h5 class="sky-text">Language</h5>
+          <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">All</button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Item 1</a>
+              <a class="dropdown-item" href="#">Item 2</a>
+              <a class="dropdown-item" href="#">Item 3</a>
+            </div>
+          </div>
+          <hr class="mt-0">
+
+          <h5 class="sky-text">Hourly Rate</h5>
+          <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">All</button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Item 1</a>
+              <a class="dropdown-item" href="#">Item 2</a>
+              <a class="dropdown-item" href="#">Item 3</a>
+            </div>
+          </div>
+          <hr class="mt-0">
+
+          <h5 class="sky-text">Location</h5>
+          <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">All</button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Item 1</a>
+              <a class="dropdown-item" href="#">Item 2</a>
+              <a class="dropdown-item" href="#">Item 3</a>
+            </div>
+          </div>
+          <hr class="mt-0">
+
+          <h5 class="sky-text">Availability</h5>
+          <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">All</button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Item 1</a>
+              <a class="dropdown-item" href="#">Item 2</a>
+              <a class="dropdown-item" href="#">Item 3</a>
+            </div>
+          </div>
+          <hr class="mt-0">
+
+          <h5 class="sky-text">Level</h5>
+          <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">All</button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Item 1</a>
+              <a class="dropdown-item" href="#">Item 2</a>
+              <a class="dropdown-item" href="#">Item 3</a>
+            </div>
+          </div>
+          <hr class="mt-0">
+
+          <h5 class="sky-text">Age</h5>
+          <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button" data-toggle="dropdown">All</button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Item 1</a>
+              <a class="dropdown-item" href="#">Item 2</a>
+              <a class="dropdown-item" href="#">Item 3</a>
+            </div>
+          </div>
+          <hr class="mt-0">
+        </div>
+      </div>
+
+      <div class="col-md-8">
+        <h2 class="text-center navy-text mb-3">42 French tutors available</h2>
+
+        <div id="tutorCards"></div>
+
+      </div>
+
+      <div class="col-md-1"></div>
+    </div>
+
+  </div>
+
+
+
 </body>
 
 

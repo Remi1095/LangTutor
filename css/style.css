@@ -25,6 +25,11 @@ footer {
     color: black;
 }
 
+hr {
+    border-top: 1px solid #000000;
+    opacity: 1;
+}
+
 /*Bootstrap*/
 
 .container {
@@ -63,6 +68,10 @@ footer {
 
 .navy-text {
     color: #002E5D !important;
+}
+
+.sky-text {
+    color: #5685A9 !important;
 }
 
 .profile-picture {
@@ -109,11 +118,39 @@ footer {
     margin: 0 auto;
 }
 
+.gray-pill {
+    display: inline-flex;
+    background-color: #cccccc;
+    border-radius: 15px;
+    padding: 2px 4px;
+    color: black;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.gray-pill img {
+    width: 30px;
+}
+
+
+.button-pill {
+    display: inline-block;
+    font-size: larger;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background-color: #5685A9;
+    color: #ffffff;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    width: fit-content;
+    margin: 0 auto;
+}
+
 .rounded-box {
-    border-radius: 60px;
+    border-radius: 10px;
     background-color: #F0F0F0;
-    padding-inline: 10%;
-    padding-block: 10px;
+    padding: 10px;
 
 }
 
@@ -134,7 +171,7 @@ footer {
 #calendar th {
     background-color: #5685A9;
     font-weight: bold;
-    white-space: nowrap; 
+    white-space: nowrap;
 }
 
 #calendar th:first-child {
@@ -150,4 +187,21 @@ footer {
 
 #calendar td.available {
     background-color: #7FE77F;
+}
+
+.star-icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-color: #f9d71c;
+    clip-path: polygon(50% 0%,
+            63% 38%,
+            100% 38%,
+            69% 59%,
+            82% 100%,
+            50% 75%,
+            18% 100%,
+            31% 59%,
+            0% 38%,
+            37% 38%);
 }

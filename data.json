@@ -2,7 +2,7 @@
     "tutors": [
       {
         "name": "John Smith",
-        "picture": "images/sample_profile.jpg",
+        "picture": "images/sample_profile.png",
         "location": "New York, USA",
         "languages": ["English", "Spanish"],
         "nativeLanguage": "English",
@@ -21,7 +21,7 @@
       },
       {
         "name": "Sarah Johnson",
-        "picture": "images/sample_picture.jpg",
+        "picture": "images/sample_profile.png",
         "location": "London, UK",
         "languages": ["English", "French"],
         "nativeLanguage": "English",
