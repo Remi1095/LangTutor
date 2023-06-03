@@ -30,6 +30,22 @@ hr {
     opacity: 1;
 }
 
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input {
+    display: block;
+    margin: 0 auto;
+    margin-top: 5px;
+    margin-bottom: 10px;
+
+}
+
+
+
 /*Bootstrap*/
 
 .container {
@@ -121,8 +137,8 @@ hr {
 .gray-pill {
     display: inline-flex;
     background-color: #cccccc;
-    border-radius: 15px;
-    padding: 2px 4px;
+    border-radius: 20px;
+    padding: 4px 8px;
     color: black;
     font-weight: bold;
     font-size: x-large;
@@ -132,6 +148,13 @@ hr {
     width: 30px;
 }
 
+button[type="submit"]:hover {
+    /* Neutralize hover styles */
+    background-color: initial;
+    color: initial;
+    text-decoration: none;
+    /* Add any other styles you want to remove or modify */
+  }
 
 .button-pill {
     display: inline-block;

@@ -4,17 +4,17 @@ function getLanguageCode(languageName) {
         spanish: 'es',
         french: 'fr',
         german: 'de',
-       
+
     };
 
-   
+
     const lowercaseLanguageName = languageName.toLowerCase();
 
-   
+
     if (lowercaseLanguageName in languageCodes) {
         return languageCodes[lowercaseLanguageName];
     } else {
-       
+
         return '';
     }
 }
@@ -25,24 +25,35 @@ function getCountryCode(languageName) {
         spanish: 'es',
         french: 'fr',
         german: 'de',
-       
+
     };
 
-   
+
     const lowercaseLanguageName = languageName.toLowerCase();
 
-   
+
     if (lowercaseLanguageName in languageCodes) {
         return languageCodes[lowercaseLanguageName];
     } else {
-       
+
         return '';
     }
 }
 
+function toTutorInfo(tutorName) {
+    var url = 'http://localhost:8080/tutorInfo.html?name=' + encodeURIComponent(tutorName);
+    window.location.href = url;
+}
 
 
 $(document).ready(function () {
+
+    var params = new URLSearchParams(window.location.search);
+    var bookingTutorName = params.get('tutor-name');
+
+    if (bookingTutorName) {
+        //popup
+    }
 
     $.getJSON('http://localhost:8080/data.json', function (data) {
 
@@ -75,14 +86,17 @@ $(document).ready(function () {
 
             var languagePillDiv = $('<div>', { class: 'ms-auto' });
 
-            var languagePill = $('<div>', { class: 'gray-pill d-inline' });
-            languagePill.text(getLanguageCode(tutor.nativeLanguage).toUpperCase());
+            $.each(tutor.languages, function (index, lang) {
+                var languagePill = $('<div>', { class: 'gray-pill d-inline ms-2' });
+                languagePill.text(getLanguageCode(lang).toUpperCase());
 
-            var countryCode = getCountryCode(tutor.nativeLanguage);
-            var flagImage = $('<img>', { src: `https://hatscripts.github.io/circle-flags/flags/${countryCode}.svg` });
-            languagePill.append(flagImage);
+                var countryCode = getCountryCode(lang);
+                var flagImage = $('<img>', { src: `https://hatscripts.github.io/circle-flags/flags/${countryCode}.svg` });
+                languagePill.append(flagImage);
 
-            languagePillDiv.append(languagePill);
+                languagePillDiv.append(languagePill);
+            });
+
             headerDiv.append(languagePillDiv);
             rightColumn.append(headerDiv);
 
@@ -104,7 +118,7 @@ $(document).ready(function () {
             rowElement.append(leftColumn);
             rowElement.append(rightColumn);
 
-            var buttonElement = $('<button>', { class: 'button-pill', text: 'Book Lessons' });
+            var buttonElement = $('<button>', { class: 'button-pill', onclick:`toTutorInfo('${tutor.name}')`, text: 'Book Lessons' });
             rowElement.append(buttonElement);
 
             tutorElement.append(rowElement);

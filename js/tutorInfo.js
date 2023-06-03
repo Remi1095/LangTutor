@@ -44,9 +44,15 @@ function getDayName(dayIndex) {
     return days[dayIndex];
 }
 
+function toBookLessons(tutorName) {
+    var url = 'http://localhost:8080/bookLessons.html?name=' + encodeURIComponent(tutorName);
+    window.location.href = url;
+}
+
 $(document).ready(function () {
-    // Check if the current page is tutorInfo.html
-    var tutorName = 'John Smith'; // Replace 'John Smith' with the desired tutor's name
+    var params = new URLSearchParams(window.location.search);
+    var tutorName = params.get('name');
+    $('#book-button').attr('onclick', `toBookLessons('${tutorName}')`);
 
     $.getJSON('http://localhost:8080/data.json', function (data) {
         var tutors = data.tutors;
@@ -54,6 +60,8 @@ $(document).ready(function () {
         var tutor = tutors.find(function (tutor) {
             return tutor.name === tutorName;
         });
+
+        
 
         if (tutor) {
             $('#tutor-name').empty().text(tutor.name); // Set the tutor's name in the <h3> element
