@@ -80,10 +80,10 @@ $(document).ready(function () {
             var profilePicture = $('<img>', { src: tutor.picture, class: 'border border-dark profile-picture' });
             leftColumn.append(profilePicture);
 
-            var rating = $('<h4>', { class: 'mt-3' }).html('<span class="star-icon"></span> ' + tutor.rating);
+            var rating = $('<h4>', { class: 'mt-3' }).html('<span class="star-icon"></span> ' + tutor.rating.toFixed(1));
             leftColumn.append(rating);
 
-            var hourlyRate = $('<h3>', { class: 'sky-text' }).text('C$' + tutor.hourlyRate);
+            var hourlyRate = $('<h3>', { class: 'sky-text' }).text('C$' + tutor.hourlyRate.toFixed(2));
             leftColumn.append(hourlyRate);
 
             var currencyPerHour = $('<h3>').text('CAD/H');
