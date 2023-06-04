@@ -79,6 +79,10 @@ input {
     border: 1px solid black;
 }
 
+.sticky-top {
+    top: 1em;
+}
+
 
 /*Custom*/
 
@@ -155,7 +159,7 @@ button[type="submit"]:hover {
     color: initial;
     text-decoration: none;
     /* Add any other styles you want to remove or modify */
-  }
+}
 
 .button-pill {
     display: inline-block;
@@ -228,4 +232,15 @@ button[type="submit"]:hover {
             31% 59%,
             0% 38%,
             37% 38%);
+}
+
+.success {
+    background-color: #7FE77F;
+    color: rgba(0, 0, 0, 0.75);
+}
+
+.success .modal-header,
+.success .modal-body,
+.success .modal-footer {
+    border: none;
 }

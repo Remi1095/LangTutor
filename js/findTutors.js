@@ -60,9 +60,11 @@ $(document).ready(function () {
 
     var params = new URLSearchParams(window.location.search);
     var bookingTutorName = params.get('tutor-name');
-
-    if (bookingTutorName) {
-        //popup
+    console.log(bookingTutorName);
+    if (bookingTutorName !== null) {
+        $('#success-title').text(`Successfully sent email to ${bookingTutorName}`)
+        $('#success-body').text(`You will receive an email at ${params.get('email')} to confirm your booking and payement`)
+        $('#success-popup').modal('show');
     }
 
     $.getJSON('http://localhost:8080/data.json', function (data) {
