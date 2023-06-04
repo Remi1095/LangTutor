@@ -44,6 +44,9 @@ input {
 
 }
 
+a {
+    text-decoration: none;
+}
 
 
 /*Bootstrap*/

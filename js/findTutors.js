@@ -65,12 +65,13 @@ function generateTutorCards(filters) {
 
             // filter
             if (
-                (filters.language && !tutor.languages.includes(filters.language)) ||
-                (filters.level && !tutor.levels.includes(filters.level)) ||
-                (filters.age && !tutor.ageGroups.includes(filters.age))
+                (filters.language && !tutor.languages.some(lang => lang.toLowerCase() === filters.language.toLowerCase())) ||
+                (filters.level && !tutor.levels.some(level => level.toLowerCase() === filters.level.toLowerCase())) ||
+                (filters.age && !tutor.ageGroups.some(age => age.toLowerCase() === filters.age.toLowerCase()))
             ) {
                 return true; // continue
             }
+
 
             var tutorElement = $('<div>', { class: 'rounded-box ms-5 me-5' });
 
