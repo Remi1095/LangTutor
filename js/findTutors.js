@@ -60,9 +60,9 @@ function generateTutorCards(filters) {
 
     $.getJSON('https://remi1095.github.io/data.json', function (data) {
 
+
+        var numTutors = 0;
         $.each(data.tutors, function (index, tutor) {
-
-
             // filter
             if (
                 (filters.language && !tutor.languages.some(lang => lang.toLowerCase() === filters.language.toLowerCase())) ||
@@ -71,7 +71,6 @@ function generateTutorCards(filters) {
             ) {
                 return true; // continue
             }
-
 
             var tutorElement = $('<div>', { class: 'rounded-box ms-5 me-5' });
 
@@ -139,7 +138,14 @@ function generateTutorCards(filters) {
 
             $('#tutorCards').append(tutorElement);
             $('#tutorCards').append($('<br>'));
+            numTutors++;
         });
+
+        if (filters.language) {
+            $('#num-tutors').text(`${numTutors} ${filters.language} tutors available`);
+        } else {
+            $('#num-tutors').text(`${numTutors} tutors available`);
+        }
     });
 }
 
