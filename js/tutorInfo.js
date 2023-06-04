@@ -45,7 +45,7 @@ function getDayName(dayIndex) {
 }
 
 function toBookLessons(tutorName) {
-    var url = 'http://localhost:8080/bookLessons.html?name=' + encodeURIComponent(tutorName);
+    var url = 'https://remi1095.github.io/bookLessons.html?name=' + encodeURIComponent(tutorName);
     window.location.href = url;
 }
 
@@ -54,7 +54,7 @@ $(document).ready(function () {
     var tutorName = params.get('name');
     $('#book-button').attr('onclick', `toBookLessons('${tutorName}')`);
 
-    $.getJSON('http://localhost:8080/data.json', function (data) {
+    $.getJSON('https://remi1095.github.io/data.json', function (data) {
         var tutors = data.tutors;
 
         var tutor = tutors.find(function (tutor) {

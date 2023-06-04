@@ -51,7 +51,7 @@ function getCountryCode(languageName) {
 }
 
 function toTutorInfo(tutorName) {
-    var url = 'http://localhost:8080/tutorInfo.html?name=' + encodeURIComponent(tutorName);
+    var url = 'https://remi1095.github.io/tutorInfo.html?name=' + encodeURIComponent(tutorName);
     window.location.href = url;
 }
 
@@ -67,7 +67,7 @@ $(document).ready(function () {
         $('#success-popup').modal('show');
     }
 
-    $.getJSON('http://localhost:8080/data.json', function (data) {
+    $.getJSON('https://remi1095.github.io/data.json', function (data) {
 
         $.each(data.tutors, function (index, tutor) {
 

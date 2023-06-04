@@ -50,7 +50,7 @@ $(document).ready(function () {
     var tutorName = params.get('name');
     $("#tutor-name").attr('value', tutorName);
 
-    $.getJSON('http://localhost:8080/data.json', function (data) {
+    $.getJSON('https://remi1095.github.io/data.json', function (data) {
         var tutors = data.tutors;
 
         var tutor = tutors.find(function (tutor) {
