@@ -147,8 +147,8 @@ $(document).ready(function () {
 
 
     var params = new URLSearchParams(window.location.search);
+
     var bookingTutorName = params.get('tutor-name');
-    console.log(bookingTutorName);
     if (bookingTutorName !== null) {
         $('#success-title').text(`Successfully sent email to ${bookingTutorName}`)
         $('#success-body').text(`You will receive an email at ${params.get('email')} to confirm your booking and payement`)
@@ -156,7 +156,7 @@ $(document).ready(function () {
     }
 
     var filters = {
-        language: null,
+        language: params.get('language'),
         level: null,
         age: null
     };
