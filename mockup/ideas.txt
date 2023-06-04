@@ -8,7 +8,7 @@ Examples:
 
 Languages:
 	English
-	Mandarin Chinese
+	Chinese
 	Spanish
 	Arabic
 	French

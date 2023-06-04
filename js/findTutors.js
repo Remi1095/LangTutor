@@ -55,21 +55,22 @@ function toTutorInfo(tutorName) {
     window.location.href = url;
 }
 
-
-$(document).ready(function () {
-
-    var params = new URLSearchParams(window.location.search);
-    var bookingTutorName = params.get('tutor-name');
-    console.log(bookingTutorName);
-    if (bookingTutorName !== null) {
-        $('#success-title').text(`Successfully sent email to ${bookingTutorName}`)
-        $('#success-body').text(`You will receive an email at ${params.get('email')} to confirm your booking and payement`)
-        $('#success-popup').modal('show');
-    }
+function generateTutorCards(filters) {
+    $('#tutorCards').empty();
 
     $.getJSON('https://remi1095.github.io/data.json', function (data) {
 
         $.each(data.tutors, function (index, tutor) {
+
+
+            // filter
+            if (
+                (filters.language && !tutor.languages.includes(filters.language)) ||
+                (filters.level && !tutor.levels.includes(filters.level)) ||
+                (filters.age && !tutor.ageGroups.includes(filters.age))
+            ) {
+                return true; // continue
+            }
 
             var tutorElement = $('<div>', { class: 'rounded-box ms-5 me-5' });
 
@@ -139,4 +140,40 @@ $(document).ready(function () {
             $('#tutorCards').append($('<br>'));
         });
     });
+}
+
+
+$(document).ready(function () {
+
+
+    var params = new URLSearchParams(window.location.search);
+    var bookingTutorName = params.get('tutor-name');
+    console.log(bookingTutorName);
+    if (bookingTutorName !== null) {
+        $('#success-title').text(`Successfully sent email to ${bookingTutorName}`)
+        $('#success-body').text(`You will receive an email at ${params.get('email')} to confirm your booking and payement`)
+        $('#success-popup').modal('show');
+    }
+
+    var filters = {
+        language: null,
+        level: null,
+        age: null
+    };
+
+    generateTutorCards(filters);
+
+    ['language', 'level', 'age'].forEach(function (filter) {
+        $(`#${filter} .dropdown-item`).click(function () {
+            var value = $(this).text();
+            $(`#${filter}-button`).text(value);
+            if (value === 'All') {
+                filters[filter] = null;
+            } else {
+                filters[filter] = value;
+            }
+            generateTutorCards(filters);
+        });
+    });
+
 });

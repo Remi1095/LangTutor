@@ -62,7 +62,6 @@ $(document).ready(function () {
         });
 
         
-
         if (tutor) {
             $('#tutor-name').empty().text(tutor.name); // Set the tutor's name in the <h3> element
             $('#tutor-description').empty().text(tutor.description); // Set the tutor's description in the <p> element
