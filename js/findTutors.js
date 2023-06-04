@@ -91,7 +91,7 @@ $(document).ready(function () {
 
             var headerDiv = $('<div>', { class: 'd-flex justify-content-between' });
 
-            var name = $('<h2>', { class: 'navy-text d-inline' }).text(tutor.name);
+            var name = $('<h4>', { class: 'navy-text d-inline fw-bold' }).text(tutor.name);
             headerDiv.append(name);
 
             var languagePillDiv = $('<div>', { class: 'ms-auto' });

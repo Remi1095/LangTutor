@@ -74,6 +74,10 @@ $(document).ready(function () {
             var timeSelect = $('#time');
             $.each(tutor.availability, function (index, value) {
 
+                if (value.length === 0) {
+                    return true;
+                }
+
                 //<div class="form-check form-check-inline">
                 var form = $('<div>', { class: "form-check form-check-inline align-top" })
                 var header = $('<p>', {class: "mb-0", text: index});
