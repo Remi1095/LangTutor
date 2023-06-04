@@ -44,10 +44,6 @@ input {
 
 }
 
-a {
-    text-decoration: none;
-}
-
 
 /*Bootstrap*/
 
@@ -135,11 +131,18 @@ a {
     font-weight: bold;
 }
 
+.white-pill a {
+    text-decoration: inherit !important;
+    color: inherit !important;
+}
+
 .white-pill img {
     width: 88px;
     display: block;
     margin: 0 auto;
 }
+
+
 
 .gray-pill {
     display: inline-flex;

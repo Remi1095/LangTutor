@@ -157,10 +157,16 @@ $(document).ready(function () {
     }
 
     var filters = {
-        language: params.get('language'),
+        language: null,
         level: null,
         age: null
     };
+
+    var initialLanguage = params.get('language');
+    if (initialLanguage !== null) {
+        filters.language = initialLanguage;
+        $('#language-button').text(initialLanguage);
+    }
 
     generateTutorCards(filters);
 
