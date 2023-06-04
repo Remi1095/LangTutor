@@ -39,7 +39,7 @@ label {
 input {
     display: block;
     margin: 0 auto;
-    margin-top: 5px;
+    margin-top: 15px;
     margin-bottom: 10px;
 
 }
@@ -142,6 +142,7 @@ input {
     color: black;
     font-weight: bold;
     font-size: x-large;
+    line-height: 46px;
 }
 
 .gray-pill img {

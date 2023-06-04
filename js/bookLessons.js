@@ -76,7 +76,7 @@ $(document).ready(function () {
 
                 //<div class="form-check form-check-inline">
                 var form = $('<div>', { class: "form-check form-check-inline align-top" })
-                var header = $('<h5>').text(index);
+                var header = $('<p>', {class: "mb-0", text: index});
                 form.append(header);
 
                 //var profilePicture = $('<img>', { src: tutor.picture, class: 'border border-dark profile-picture' });

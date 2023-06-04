@@ -4,7 +4,12 @@ function getLanguageCode(languageName) {
         spanish: 'es',
         french: 'fr',
         german: 'de',
-
+        chinese: 'zh',
+        arabic: 'ar',
+        russian: 'ru',
+        portuguese: 'pt',
+        japanese: 'ja',
+        italian: 'it',
     };
 
 
@@ -20,20 +25,25 @@ function getLanguageCode(languageName) {
 }
 
 function getCountryCode(languageName) {
-    const languageCodes = {
+    const countryCodes = {
         english: 'gb',
         spanish: 'es',
         french: 'fr',
         german: 'de',
-
+        chinese: 'cn',
+        arabic: 'sa',
+        russian: 'ru',
+        portuguese: 'pt',
+        japanese: 'jp',
+        italian: 'it',
     };
 
 
     const lowercaseLanguageName = languageName.toLowerCase();
 
 
-    if (lowercaseLanguageName in languageCodes) {
-        return languageCodes[lowercaseLanguageName];
+    if (lowercaseLanguageName in countryCodes) {
+        return countryCodes[lowercaseLanguageName];
     } else {
 
         return '';
@@ -118,7 +128,7 @@ $(document).ready(function () {
             rowElement.append(leftColumn);
             rowElement.append(rightColumn);
 
-            var buttonElement = $('<button>', { class: 'button-pill', onclick:`toTutorInfo('${tutor.name}')`, text: 'Book Lessons' });
+            var buttonElement = $('<button>', { class: 'button-pill', onclick: `toTutorInfo('${tutor.name}')`, text: 'Book Lessons' });
             rowElement.append(buttonElement);
 
             tutorElement.append(rowElement);

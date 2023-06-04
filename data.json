@@ -1,42 +1,121 @@
 {
-    "tutors": [
-      {
-        "name": "John Smith",
-        "picture": "images/sample_profile.png",
-        "location": "New York, USA",
-        "languages": ["English", "Spanish"],
-        "nativeLanguage": "English",
-        "ageGroups": ["Children", "Teenagers", "Adults"],
-        "levels": ["Beginner", "Intermediate", "Advanced"],
-        "lessonLocation": ["Online", "Local"],
-        "timezone": "EST",
-        "rating": 4.7,
-        "hourlyRate": 30,
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "availability": {
-          "Monday": ["09:00 - 12:00", "15:00 - 18:00"],
-          "Wednesday": ["10:00 - 11:00", "16:00 - 19:00"],
-          "Friday": ["08:00 - 11:00"]
-        }
-      },
-      {
-        "name": "Sarah Johnson",
-        "picture": "images/sample_profile.png",
-        "location": "London, UK",
-        "languages": ["English", "French"],
-        "nativeLanguage": "English",
-        "ageGroups": ["Teenagers", "Adults"],
-        "levels": ["Intermediate", "Advanced"],
-        "lessonLocation": ["Online"],
-        "timezone": "GMT",
-        "rating": 4.5,
-        "hourlyRate": 35,
-        "description": "Experienced French tutor specializing in conversation and grammar skills.",
-        "availability": {
-          "Tuesday": ["13:00 - 16:00", "18:00 - 21:00"],
-          "Thursday": ["09:00 - 12:00", "14:00 - 17:00"]
-        }
+  "tutors": [
+    {
+      "name": "John Smith",
+      "picture": "images/sample_profile.png",
+      "location": "New York, USA",
+      "languages": [
+        "English",
+        "Spanish"
+      ],
+      "nativeLanguage": "English",
+      "ageGroups": [
+        "Children",
+        "Teenagers",
+        "Adults"
+      ],
+      "levels": [
+        "Beginner",
+        "Intermediate",
+        "Advanced"
+      ],
+      "lessonLocation": [
+        "Online",
+        "Local"
+      ],
+      "timezone": "EST",
+      "rating": 4.7,
+      "hourlyRate": 30.0,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "availability": {
+        "Monday": [
+          "09:00 - 12:00",
+          "15:00 - 18:00"
+        ],
+        "Wednesday": [
+          "10:00 - 11:00",
+          "16:00 - 19:00"
+        ],
+        "Friday": [
+          "08:00 - 11:00"
+        ]
       }
-    ]
-  }
-  
+    },
+    {
+      "name": "Sarah Johnson",
+      "picture": "images/sample_profile.png",
+      "location": "London, UK",
+      "languages": [
+        "English",
+        "French"
+      ],
+      "nativeLanguage": "English",
+      "ageGroups": [
+        "Teenagers",
+        "Adults"
+      ],
+      "levels": [
+        "Intermediate",
+        "Advanced"
+      ],
+      "lessonLocation": [
+        "Online"
+      ],
+      "timezone": "GMT",
+      "rating": 4.5,
+      "hourlyRate": 35.0,
+      "description": "Experienced French tutor specializing in conversation and grammar skills.",
+      "availability": {
+        "Tuesday": [
+          "13:00 - 16:00",
+          "18:00 - 21:00"
+        ],
+        "Thursday": [
+          "09:00 - 12:00",
+          "14:00 - 17:00"
+        ]
+      }
+    },
+    {
+      "name": "Conneer Brasière",
+      "picture": "images/conner.png",
+      "location": "Brazil, Rio",
+      "languages": [
+        "English",
+        "Chinese",
+        "Spanish",
+        "Arabic",
+        "French",
+        "Russian",
+        "Portuguese",
+        "German",
+        "Japanese",
+        "Italian"
+      ],
+      "nativeLanguage": "English",
+      "ageGroups": [
+        "Children",
+        "Teenagers",
+        "Adults"
+      ],
+      "levels": [
+        "Beginner",
+        "Intermediate",
+        "Advanced"
+      ],
+      "lessonLocation": [
+        "Online",
+        "Local"
+      ],
+      "timezone": "EST",
+      "rating": 1.5,
+      "hourlyRate": 100.0,
+      "description": "Most beautiful handsomest huuuuuh high intellect, highly social, extremely extroveted, phylosophical, anthropologist, psychiatrisc.",
+      "availability": {
+        "Monday": [
+          "8:00 - 23:00"
+        ]
+      }
+    }
+  ]
+}
