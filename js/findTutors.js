@@ -81,7 +81,7 @@ function generateTutorCards(filters) {
             var profilePicture = $('<img>', { src: tutor.picture, class: 'border border-dark profile-picture' });
             leftColumn.append(profilePicture);
 
-            var averageRating = tutor.reviews.reduce((total, review) => total + review.rating, 0) / reviews.length;
+            var averageRating = tutor.reviews.reduce((total, review) => total + review.rating, 0) / tutor.reviews.length;
             var rating = $('<h4>', { class: 'mt-3' }).html('<span class="star-icon"></span> ' + averageRating.toFixed(1));
             leftColumn.append(rating);
 
