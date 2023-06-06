@@ -1,49 +1,42 @@
-function translateText(text, targetLanguage) {
+function translatePageToFrench() {
     var translationData = null;
 
     // Fetch the translation file using jQuery's $.getJSON() method
-    $.getJSON('https://remi1095.github.io/translations.json', function(data) {
+    $.getJSON('https://remi1095.github.io/french.json', function (data) {
         translationData = data;
-    })
-    .fail(function() {
-        console.log('Failed to load translation file');
-    });
 
-    // Check if the translation exists for the target language
-    if (translationData && translationData[text] && translationData[text][targetLanguage]) {
-        return translationData[text][targetLanguage];
+        // Translate the page content
+        translateElement($('body'), translationData, 'fr');
+    })
+        .fail(function () {
+            console.log('Failed to load translation file');
+        });
+
+    // Recursive function to translate an element and its children
+    function translateElement(element, translationData) {
+        element.contents().each(function () {
+            var node = $(this);
+            if (node[0].nodeType === Node.TEXT_NODE) {
+                // Translate text node
+                var translatedText = translateText(node.text(), translationData);
+                node.replaceWith(translatedText);
+            } else if (node[0].nodeType === Node.ELEMENT_NODE) {
+                // Translate element recursively
+                translateElement(node, translationData);
+            }
+        });
     }
 
-    // If translation doesn't exist, return the original text
-    return text;
-}
-
-function translatePageToFrench() {
-    // Retrieve all text elements on the page
-    var textElements = document.querySelectorAll('body *:not(script):not(style):not(noscript):not(textarea):not(input)');
-
-    // Iterate through each text element and translate its content to French
-    textElements.forEach(function (element) {
-        var originalText = element.textContent.trim();
-
-        // Translate the text using the translateText function
-        var translatedText = translateText(originalText, 'fr');
-        element.textContent = translatedText;
-    });
-}
-
-function translatePageToEnglish() {
-    // Retrieve all text elements on the page
-    var textElements = document.querySelectorAll('body *:not(script):not(style):not(noscript):not(textarea):not(input)');
-
-    // Iterate through each text element and translate its content to English
-    textElements.forEach(function (element) {
-        var originalText = element.getAttribute('data-original-text');
-        if (originalText) {
-            element.textContent = originalText;
-            element.removeAttribute('data-original-text');
+    // Translation function
+    function translateText(text, translationData) {
+        if (translationData && translationData[text]) {
+            return translationData[text];
         }
-    });
+        return text;
+    }
 }
 
-window.addEventListener('load', translatePageToFrench);
+// Call the translatePageToFrench function when the document is ready
+$(document).ready(function () {
+    translatePageToFrench();
+});
