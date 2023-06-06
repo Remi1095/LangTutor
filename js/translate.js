@@ -1,42 +1,57 @@
-function translatePageToFrench() {
+function translatePage() {
     var translationData = null;
 
-    // Fetch the translation file using jQuery's $.getJSON() method
     $.getJSON('https://remi1095.github.io/french.json', function (data) {
         translationData = data;
+        if ($('html').attr('lang') === 'en') {
+            $('html').attr('lang', 'fr')
+            translateElement($('body'), translationData, 'fr');
+            $('#page-language').text('English')
+        } else if ($('html').attr('lang') === 'fr') {
+            $('html').attr('lang', 'en')
+            translateElement($('body'), translationData, 'en');
+            $('#page-language').text('Français')
+        }
 
-        // Translate the page content
-        translateElement($('body'), translationData, 'fr');
-    })
-        .fail(function () {
-            console.log('Failed to load translation file');
-        });
+    }).fail(function () {
+        console.log('Failed to load translation file');
+    });
 
-    // Recursive function to translate an element and its children
-    function translateElement(element, translationData) {
+
+    function translateElement(element, translationData, targetLanguage) {
         element.contents().each(function () {
             var node = $(this);
             if (node[0].nodeType === Node.TEXT_NODE) {
-                // Translate text node
-                var translatedText = translateText(node.text(), translationData);
-                node.replaceWith(translatedText);
+                if (targetLanguage === 'fr') {
+                    var translatedText = translateToFrench(node.text(), translationData);
+                    node.replaceWith(translatedText);
+                } else if (targetLanguage === 'en') {
+                    var translatedText = translateToEnglish(node.text(), translationData);
+                    node.replaceWith(translatedText);
+                }
             } else if (node[0].nodeType === Node.ELEMENT_NODE) {
-                // Translate element recursively
-                translateElement(node, translationData);
+
+                translateElement(node, translationData, targetLanguage);
             }
         });
     }
 
-    // Translation function
-    function translateText(text, translationData) {
+
+    function translateToFrench(text, translationData) {
         if (translationData && translationData[text]) {
             return translationData[text];
         }
         return text;
     }
-}
 
-// Call the translatePageToFrench function when the document is ready
-$(document).ready(function () {
-    translatePageToFrench();
-});
+    function translateToEnglish(text, translationData) {
+        for (var key in translationData) {
+            if (translationData.hasOwnProperty(key)) {
+                if (translationData[key] === text) {
+                    return key;
+                }
+            }
+        }
+        return text;
+    }
+}

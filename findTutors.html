@@ -5,14 +5,12 @@
   <title>LangTutor - Find a private language tutor</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/translate.js"></script>
   <script src="js/findTutors.js"></script>
 
 </head>
@@ -33,6 +31,9 @@
         </li>
       </ul>
       <ul class="navbar-nav ms-auto">
+        <li class="navbar-nav ms-auto me-3">
+          <button id="page-language" class="button-pill" onclick="translatePage()">Français</button>
+        </li>
         <li class="nav-item login-box ms-auto">
           <a class="nav-link navy-text" href="#">Login</a>
         </li>
@@ -66,7 +67,8 @@
 
           <h5 class="sky-text">Language</h5>
           <div class="dropdown">
-            <button id="language-button" class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Select
+            <button id="language-button" class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">Select
               language</button>
             <ul id="language" class="dropdown-menu">
               <li><a class="dropdown-item" href="#">All</a></li>
@@ -122,7 +124,8 @@
 
           <h5 class="sky-text">Level</h5>
           <div class="dropdown">
-            <button id="level-button" class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Select
+            <button id="level-button" class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">Select
               level</button>
             <ul id="level" class="dropdown-menu">
               <li><a class="dropdown-item" href="#">All</a></li>
@@ -135,7 +138,8 @@
 
           <h5 class="sky-text">Age Group</h5>
           <div class="dropdown">
-            <button id="age-button" class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Select age
+            <button id="age-button" class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">Select age
               group</button>
             <ul id="age" class="dropdown-menu">
               <li><a class="dropdown-item" href="#">All</a></li>

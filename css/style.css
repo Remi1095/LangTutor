@@ -159,6 +159,7 @@ input {
     width: 30px;
 }
 
+
 button[type="submit"]:hover {
     /* Neutralize hover styles */
     background-color: initial;
