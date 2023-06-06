@@ -2,20 +2,18 @@ function generateCalendar(availability, id) {
     var table = document.getElementById(id);
     var startHour = 8;
     var endHour = 22;
-
-    var tableHTML = '<thead><tr><th></th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr></thead><tbody>';
+    var tableHTML = '<thead><tr><th></th><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr></thead><tbody>';
 
     for (var i = startHour; i <= endHour; i++) {
         tableHTML += '<tr>';
         tableHTML += '<td>' + (i < 10 ? '0' + i : i) + ':00</td>';
 
         for (var j = 1; j <= 7; j++) {
-            var day = getDayName(j);
+            var day = getDayName(j-1);
             var isAvailable = false;
-
             if (availability.hasOwnProperty(day)) {
                 var timeslots = availability[day];
-
+                
                 for (var k = 0; k < timeslots.length; k++) {
                     var timeslot = timeslots[k];
                     var [start, end] = timeslot.split(" - ");
