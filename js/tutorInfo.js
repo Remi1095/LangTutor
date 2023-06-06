@@ -61,7 +61,7 @@ $(document).ready(function () {
             return tutor.name === tutorName;
         });
 
-        
+
         if (tutor) {
             $('#tutor-name').empty().text(tutor.name); // Set the tutor's name in the <h3> element
             $('#tutor-description').empty().text(tutor.description); // Set the tutor's description in the <p> element
@@ -94,6 +94,21 @@ $(document).ready(function () {
                     tutorTableBody.append(row); // Append the row to the tutor table body
                 }
             }
+
+            //reviews
+            $.each(tutor.reviews, function (index, review) {
+
+                var reviewDiv = $('<div>', { class: 'rounded-box mt-3' });
+                var rating = $('<h4>', { text: review.rating });
+                var star = $('<span>', { class: 'star-icon' });
+                rating.append(star);
+                reviewDiv.append(rating);
+                var paragraph = $('<p>', { text: review.paragraph });
+                reviewDiv.append(paragraph);
+                $('#reviews').append(reviewDiv);
+
+
+            })
         }
     });
 });
