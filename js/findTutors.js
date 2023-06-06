@@ -101,7 +101,7 @@ function generateTutorCards(filters) {
             var languagePillDiv = $('<div>', { class: 'ms-auto' });
 
             $.each(tutor.languages, function (index, lang) {
-                var languagePill = $('<div>', { class: 'gray-pill d-inline ms-2' });
+                var languagePill = $('<div>', { class: 'gray-pill ms-2' });
                 languagePill.text(getLanguageCode(lang).toUpperCase());
 
                 var countryCode = getCountryCode(lang);

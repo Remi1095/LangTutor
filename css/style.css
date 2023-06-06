@@ -148,11 +148,13 @@ input {
     display: inline-flex;
     background-color: #cccccc;
     border-radius: 20px;
-    padding: 4px 8px;
+    padding: 0px 8px;
+    margin-top: 4px;
     color: black;
     font-weight: bold;
     font-size: x-large;
     line-height: 46px;
+    white-space: nowrap;
 }
 
 .gray-pill img {
