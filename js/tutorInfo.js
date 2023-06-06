@@ -99,11 +99,11 @@ $(document).ready(function () {
             $.each(tutor.reviews, function (index, review) {
 
                 var reviewDiv = $('<div>', { class: 'rounded-box mt-3' });
-                var rating = $('<h4>', { text: review.rating });
+                var rating = $('<h4>');
                 var star = $('<span>', { class: 'star-icon' });
-                rating.append(star);
+                rating.append(star, ' ', review.rating);
                 reviewDiv.append(rating);
-                var paragraph = $('<p>', { text: review.paragraph });
+                var paragraph = $('<p>', { text: review.review });
                 reviewDiv.append(paragraph);
                 $('#reviews').append(reviewDiv);
 
