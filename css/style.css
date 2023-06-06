@@ -241,6 +241,23 @@ button[type="submit"]:hover {
             37% 38%);
 }
 
+.star-icon-gray {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-color: #cccccc;
+    clip-path: polygon(50% 0%,
+            63% 38%,
+            100% 38%,
+            69% 59%,
+            82% 100%,
+            50% 75%,
+            18% 100%,
+            31% 59%,
+            0% 38%,
+            37% 38%);
+}
+
 .success {
     background-color: #7FE77F;
     color: rgba(0, 0, 0, 0.75);

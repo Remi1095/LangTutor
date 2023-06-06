@@ -74,13 +74,22 @@ $(document).ready(function () {
             var tutorTableBody = $('#tutor-table').find('tbody'); // Get the tutor table body
             tutorTableBody.empty(); // Clear the table body
 
+            var row = $('<tr>');
+            var averageRating = tutor.reviews.reduce((total, review) => total + review.rating, 0) / tutor.reviews.length;
+            row.append($('<td>').text('Rating'));
+            row.append($('<td>').text(averageRating.toFixed(1)));
+
+            tutorTableBody.append(row); // Append the row to the tutor table body
+
+
             for (var key in tutor) {
                 if (
                     tutor.hasOwnProperty(key) &&
                     key !== 'name' &&
                     key !== 'picture' &&
                     key !== 'description' &&
-                    key !== 'availability'
+                    key !== 'availability' &&
+                    key !== 'reviews'
                 ) {
                     var fieldName = key.replace(/([A-Z])/g, ' $1').trim(); // Convert camelCase to capitalized words
                     fieldName = fieldName.replace(/^./, function (str) {
@@ -89,7 +98,11 @@ $(document).ready(function () {
                     var row = $('<tr>');
 
                     row.append($('<td>').text(fieldName));
-                    row.append($('<td>').text(tutor[key]));
+                    if (Array.isArray(tutor[key])) {
+                        row.append($('<td>').text(tutor[key].join(', ')));
+                    } else {
+                        row.append($('<td>').text(tutor[key]));
+                    }
 
                     tutorTableBody.append(row); // Append the row to the tutor table body
                 }
@@ -101,7 +114,14 @@ $(document).ready(function () {
                 var reviewDiv = $('<div>', { class: 'rounded-box mt-3' });
                 var rating = $('<h4>');
                 var star = $('<span>', { class: 'star-icon' });
-                rating.append(star, ' ', review.rating);
+                var starGray = $('<span>', { class: 'star-icon-gray' });
+                for (var i = 0; i < review.rating; i++) {
+                    rating.append(star.clone());
+                }
+                for (var i = 0; i < 5 - review.rating; i++) {
+                    rating.append(starGray.clone());
+                }
+                rating.append(' ', review.rating);
                 reviewDiv.append(rating);
                 var paragraph = $('<p>', { text: review.review });
                 reviewDiv.append(paragraph);
