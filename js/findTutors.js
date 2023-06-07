@@ -60,6 +60,12 @@ function generateTutorCards(filters) {
 
     $.getJSON('https://remi1095.github.io/data.json', function (data) {
 
+        data.tutors.sort(function (a, b) {
+            var averageRatingA = calculateAverageRating(a.reviews);
+            var averageRatingB = calculateAverageRating(b.reviews);
+            return averageRatingB - averageRatingA;
+        });
+
 
         var numTutors = 0;
         $.each(data.tutors, function (index, tutor) {
@@ -81,8 +87,7 @@ function generateTutorCards(filters) {
             var profilePicture = $('<img>', { src: tutor.picture, class: 'border border-dark profile-picture' });
             leftColumn.append(profilePicture);
 
-            var averageRating = tutor.reviews.reduce((total, review) => total + review.rating, 0) / tutor.reviews.length;
-            var rating = $('<h4>', { class: 'mt-3' }).html('<span class="star-icon"></span> ' + averageRating.toFixed(1));
+            var rating = $('<h4>', { class: 'mt-3' }).html('<span class="star-icon"></span> ' + calculateAverageRating(tutor.reviews).toFixed(1));
             leftColumn.append(rating);
 
             var hourlyRate = $('<h3>', { class: 'sky-text' }).text('C$' + tutor.hourlyRate.toFixed(2));
@@ -148,6 +153,14 @@ function generateTutorCards(filters) {
             $('#num-tutors').text(`${numTutors} tutors available`);
         }
     });
+}
+
+function calculateAverageRating(reviews) {
+    if (reviews.length === 0) {
+        return 0;
+    }
+    var totalRating = reviews.reduce((total, review) => total + review.rating, 0);
+    return totalRating / reviews.length;
 }
 
 
